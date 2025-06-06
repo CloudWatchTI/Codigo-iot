@@ -24,7 +24,7 @@ Organizar o código em módulos reutilizáveis e bem documentados.
 
 ---
 
-3. Estrutura Modular do Código
+## 3. Estrutura Modular do Código
 A aplicação foi dividida em múltiplos arquivos .ino, cada um com uma função específica no projeto. Essa abordagem modular facilita a manutenção, compreensão e expansibilidade do sistema.
 
 📁 Descrição dos Arquivos
@@ -38,7 +38,7 @@ Sensor_umidade.ino	Código complementar voltado à futura integração com senso
 
 ---
 
-4. Componentes Utilizados
+## 4. Componentes Utilizados
 Microcontrolador: NodeMCU ESP32
 
 Sensor de Temperatura: DS18B20
@@ -53,7 +53,7 @@ Conexão de rede: Wi-Fi 2.4GHz
 
 ---
 
-5. Bibliotecas Necessárias
+## 5. Bibliotecas Necessárias
 Antes de compilar e carregar o código no ESP32, é necessário instalar as seguintes bibliotecas na IDE Arduino:
 
 WiFi.h – para conexão à rede sem fio.
@@ -66,7 +66,7 @@ DallasTemperature.h – para conversão e tratamento da temperatura.
 
 ---
 
-6. Funcionamento Geral
+## 6. Funcionamento Geral
 Inicialização
 O código configura a conexão Wi-Fi e estabelece comunicação com o broker MQTT na nuvem.
 
@@ -84,7 +84,7 @@ O ESP32 pode também receber mensagens do servidor (como comandos de configuraç
 
 ---
 
-7. Visualização em Nuvem
+## 7. Visualização em Nuvem
 A integração com a plataforma Shiftr.io permite:
 
 Visualização dos dados em tempo real.
@@ -95,7 +95,7 @@ Diagnóstico remoto de falhas de leitura ou conectividade.
 
 ---
 
-8. Expansões Futuras
+## 8. Expansões Futuras
 Como parte da proposta de inovação, este sistema pode ser estendido com:
 
 📈 Previsão Inteligente de Temperatura: Utilização de modelos de aprendizado de máquina embarcados (como redes LSTM) para prever anomalias antes que ocorram.
@@ -108,14 +108,14 @@ Como parte da proposta de inovação, este sistema pode ser estendido com:
 
 ---
 
-9. Considerações Finais
+## 9. Considerações Finais
 A organização modular do código, o uso de padrões consolidados em IoT (como MQTT) e a possibilidade de expansão com inteligência artificial tornam este sistema adequado para aplicações em ambientes críticos, como cozinhas industriais, hospitais ou laboratórios.
 
 A escolha do ESP32 como plataforma base se deu por sua eficiência energética, capacidade de processamento e versatilidade de conexão, sendo apropriado mesmo para soluções embarcadas com recursos limitados.
 
 ---
 
-10. Autores
+## 10. Autores
 Projeto desenvolvido por discentes da Universidade Católica de Santos – Curso de Ciência da Computação:
 
 Amanda Naroaka
