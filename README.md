@@ -250,70 +250,66 @@ Mensagem enviada para tópico: estacao_bistro/temperatura
 
 #### 🔧 Passo 1: Instalar a IDE Arduino
 Baixe e instale a IDE Arduino a partir do site oficial:
+```bash
 https://www.arduino.cc/en/software
-
+```
 #### 📦 Passo 2: Instalar as Bibliotecas Necessárias
 Abra a IDE Arduino e vá em Sketch > Incluir Biblioteca > Gerenciar Bibliotecas...
 Instale as seguintes bibliotecas:
 
-WiFi (já incluída para ESP32)
+* WiFi (já incluída para ESP32)
 
-PubSubClient
+* PubSubClient
 
-OneWire
+* OneWire
 
-DallasTemperature
+* DallasTemperature
 
 #### 🧩 Passo 3: Instalar a Placa ESP32 na IDE Arduino
-Vá em Arquivo > Preferências
 
-No campo URLs Adicionais para Gerenciadores de Placas, adicione:
+1. Vá em Arquivo > Preferências
+2. No campo URLs Adicionais para Gerenciadores de Placas, adicione:
 ```bash
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 ```
-Vá em Ferramentas > Placa > Gerenciador de Placas...
-
-Procure por esp32 e clique em Instalar (pelo Espressif Systems)
+3. Vá em Ferramentas > Placa > Gerenciador de Placas...
+4. Procure por esp32 e clique em Instalar (pelo Espressif Systems)
 
 #### 🧠 Passo 4: Configurar o Código
 Abra o arquivo PCE_2.ino, que é o código principal. Verifique e configure:
 
-Nome da sua rede Wi-Fi (ssid)
+* Nome da sua rede Wi-Fi (ssid)
 
-Senha da rede (password)
+* Senha da rede (password)
 
-Dados do broker MQTT da Shiftr.io:
+* Dados do broker MQTT da Shiftr.io:
 
-Host (ex: broker.shiftr.io)
+  * Host (ex: broker.shiftr.io)
 
-Porta (1883)
+  * Porta (1883)
 
-Usuário e senha
+  * Usuário e senha
 
 #### 🔌 Passo 5: Fazer Upload para o ESP32
-Conecte o ESP32 via cabo USB ao seu computador.
 
-Selecione a porta correta em Ferramentas > Porta
-
-Clique em Upload (botão com seta para a direita).
-
-Aguarde a compilação e o envio para a placa.
+1. Conecte o ESP32 via cabo USB ao seu computador.
+2. Selecione a porta correta em Ferramentas > Porta
+3. Clique em Upload (botão com seta para a direita).
+4. Aguarde a compilação e o envio para a placa.
 
 #### 🖥️ Passo 6: Monitorar pela IDE ou pela Shiftr.io
-Abra o Serial Monitor na IDE Arduino (9600 baud) para acompanhar as mensagens.
 
-Acesse o painel da Shiftr.io (https://www.shiftr.io) e veja os dados sendo recebidos em tempo real no seu broker MQTT.
+* Abra o Serial Monitor na IDE Arduino (9600 baud) para acompanhar as mensagens.
+* Acesse o painel da Shiftr.io (https://www.shiftr.io) e veja os dados sendo recebidos em tempo real no seu broker MQTT.
 
 #### ✅ Pronto!
+
 A partir desse momento:
 
-O ESP32 estará coletando a temperatura periodicamente.
-
-Os dados serão enviados automaticamente para o painel MQTT.
-
-Caso haja perda de conexão com o Wi-Fi ou o broker, o código executará uma reconexão automática.
-
-(Futuramente) notificações ou comandos poderão ser enviados do broker para o ESP32.
+* O ESP32 estará coletando a temperatura periodicamente.
+* Os dados serão enviados automaticamente para o painel MQTT.
+* Caso haja perda de conexão com o Wi-Fi ou o broker, o código executará uma reconexão automática.
+* Futuramente as notificações ou comandos poderão ser enviados do broker para o ESP32.
 
 ---
 
