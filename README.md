@@ -114,8 +114,31 @@ A organização modular do código, o uso de padrões consolidados em IoT (como 
 A escolha do ESP32 como plataforma base se deu por sua eficiência energética, capacidade de processamento e versatilidade de conexão, sendo apropriado mesmo para soluções embarcadas com recursos limitados.
 
 ---
+## 10. Pré-requesitos
+Pré-requisitos
+### 10.1 Hardware
+NodeMCU ESP32
 
-## 10. Autores
+Sensor de temperatura DS18B20
+
+(Opcional) Sensor de umidade
+
+Resistores e cabos de conexão
+
+Fonte de alimentação USB
+
+10.2 Bibliotecas (Instale pela IDE Arduino)
+cpp
+Copiar
+Editar
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
+
+---
+
+## 11. Autores
 Projeto desenvolvido por discentes da Universidade Católica de Santos – Curso de Ciência da Computação:
 
 Amanda Naroaka
@@ -128,6 +151,6 @@ Lucas Vinicius Dimarzio Carneiro
 
 Marcelo Berger Gil
 
----
-
 Vinicius Lustosa Silva
+
+---
