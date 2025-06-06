@@ -137,8 +137,8 @@ Fonte de alimentação USB
 
 ---
 
-## 11 Conexão Wi-Fi
-> Código resumo
+## 11. Conexão Wi-Fi
+> Código-resumo de ***C_Setup_WiFi.ino***:
 
 ```cpp
 const char* ssid = "NOME_DA_REDE";
@@ -162,7 +162,90 @@ void setup_wifi() {
 ```
 ---
 
-## . Autores
+## 12. Leitura da Temperatura
+> Código da leitura com o sensor DS18B20:
+```cpp
+#define ONE_WIRE_BUS 4
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+void setup() {
+  sensors.begin();
+}
+
+float lerTemperatura() {
+  sensors.requestTemperatures();
+  return sensors.getTempCByIndex(0);
+}
+```
+
+---
+
+## 13. Envio dos Dados via MQTT
+> Código-resumo de ***envio_de_mensagens.ino***:
+
+```cpp
+const char* mqtt_server = "broker.shiftr.io";
+const int mqtt_port = 1883;
+const char* mqtt_user = "usuario";
+const char* mqtt_password = "senha";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+void envia_mensagem() {
+  float temp = lerTemperatura();
+  char msg[10];
+  dtostrf(temp, 4, 2, msg);
+  client.publish("estacao_bistro/temperatura", msg);
+}
+```
+---
+
+## 14. Reconexão Automática
+> Trecho de ***D_Reconnect.ino***:
+
+```cpp
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("Tentando conectar ao broker MQTT...");
+    if (client.connect("ESP32Client", mqtt_user, mqtt_password)) {
+      Serial.println("Conectado!");
+      client.subscribe("estacao_bistro/comandos");
+    } else {
+      Serial.print("Falhou, rc=");
+      Serial.print(client.state());
+      delay(5000);
+    }
+  }
+}
+
+``` 
+
+## 15. Demonstração de Funcionamento
+### 15.1 Painel do Shiftr.io
+No painel do [shiftr.io](https://www.shiftr.io), após conectar o ESP32 com sucesso, será possível visualizar:
+
+Gráfico em tempo real da temperatura
+
+Tópicos ativos
+
+Dispositivos conectados (clientes)
+
+15.2 Serial Monitor (IDE Arduino)
+```
+Wi-Fi conectado!
+IP: 192.168.0.102
+Tentando conectar ao broker MQTT...
+Conectado!
+Temperatura atual: 5.75 °C
+Mensagem enviada para tópico: estacao_bistro/temperatura
+
+```
+
+---
+
+## 16. Autores
 Projeto desenvolvido por discentes da Universidade Católica de Santos – Curso de Ciência da Computação:
 
 Amanda Naroaka
