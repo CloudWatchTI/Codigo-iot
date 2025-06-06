@@ -128,37 +128,38 @@ Resistores e cabos de conexão
 Fonte de alimentação USB
 
 10.2 Bibliotecas (Instale pela IDE Arduino)
-'''cpp
+```cpp
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
-'''
+```
+
 ---
 
 ## 11 Conexão Wi-Fi
 > Código resumo
 
-'''cpp
+```cpp
 const char* ssid = "NOME_DA_REDE";
 const char* password = "SENHA_DA_REDE";
-'''
+
 void setup_wifi() {
   delay(10);
   Serial.println("Conectando ao Wi-Fi...");
   WiFi.begin(ssid, password);
-'''
+
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
-  '''
+
   Serial.println("");
   Serial.println("Wi-Fi conectado!");
   Serial.print("IP: ");
   Serial.println(WiFi.localIP());
 }
-'''
+```
 ---
 
 ## . Autores
