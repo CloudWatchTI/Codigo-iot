@@ -245,7 +245,79 @@ Mensagem enviada para tópico: estacao_bistro/temperatura
 
 ---
 
-## 16. Autores
+## 16. Como Usar o Sistema
+> Seguindo estas instruções, será possível realizar a leitura dos sensores e envio dos dados para a nuvem via MQTT.
+
+#### 🔧 Passo 1: Instalar a IDE Arduino
+Baixe e instale a IDE Arduino a partir do site oficial:
+https://www.arduino.cc/en/software
+
+#### 📦 Passo 2: Instalar as Bibliotecas Necessárias
+Abra a IDE Arduino e vá em Sketch > Incluir Biblioteca > Gerenciar Bibliotecas...
+Instale as seguintes bibliotecas:
+
+WiFi (já incluída para ESP32)
+
+PubSubClient
+
+OneWire
+
+DallasTemperature
+
+#### 🧩 Passo 3: Instalar a Placa ESP32 na IDE Arduino
+Vá em Arquivo > Preferências
+
+No campo URLs Adicionais para Gerenciadores de Placas, adicione:
+```bash
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+```
+Vá em Ferramentas > Placa > Gerenciador de Placas...
+
+Procure por esp32 e clique em Instalar (pelo Espressif Systems)
+
+#### 🧠 Passo 4: Configurar o Código
+Abra o arquivo PCE_2.ino, que é o código principal. Verifique e configure:
+
+Nome da sua rede Wi-Fi (ssid)
+
+Senha da rede (password)
+
+Dados do broker MQTT da Shiftr.io:
+
+Host (ex: broker.shiftr.io)
+
+Porta (1883)
+
+Usuário e senha
+
+#### 🔌 Passo 5: Fazer Upload para o ESP32
+Conecte o ESP32 via cabo USB ao seu computador.
+
+Selecione a porta correta em Ferramentas > Porta
+
+Clique em Upload (botão com seta para a direita).
+
+Aguarde a compilação e o envio para a placa.
+
+#### 🖥️ Passo 6: Monitorar pela IDE ou pela Shiftr.io
+Abra o Serial Monitor na IDE Arduino (9600 baud) para acompanhar as mensagens.
+
+Acesse o painel da Shiftr.io (https://www.shiftr.io) e veja os dados sendo recebidos em tempo real no seu broker MQTT.
+
+#### ✅ Pronto!
+A partir desse momento:
+
+O ESP32 estará coletando a temperatura periodicamente.
+
+Os dados serão enviados automaticamente para o painel MQTT.
+
+Caso haja perda de conexão com o Wi-Fi ou o broker, o código executará uma reconexão automática.
+
+(Futuramente) notificações ou comandos poderão ser enviados do broker para o ESP32.
+
+---
+
+## 17. Autores
 Projeto desenvolvido por discentes da Universidade Católica de Santos – Curso de Ciência da Computação:
 
 Amanda Naroaka
