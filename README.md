@@ -12,15 +12,15 @@ A arquitetura do sistema baseia-se na coleta de dados por sensores digitais, tra
 ## 2. Objetivos do Código
 A aplicação embarcada tem como finalidade:
 
-Estabelecer comunicação com uma rede Wi-Fi.
+* Estabelecer comunicação com uma rede Wi-Fi.
 
-Ler periodicamente os dados de temperatura (e futuramente, umidade).
+* Ler periodicamente os dados de * temperatura (e futuramente, umidade).
 
-Transmitir os dados por protocolo MQTT à nuvem (Shiftr.io).
+* Transmitir os dados por protocolo MQTT à nuvem (Shiftr.io).
 
-Garantir reconexão automática em caso de falhas de rede.
+* Garantir reconexão automática em caso de falhas de rede.
 
-Organizar o código em módulos reutilizáveis e bem documentados.
+* Organizar o código em módulos reutilizáveis e bem documentados.
 
 ---
 
